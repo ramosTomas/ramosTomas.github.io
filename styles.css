@@ -1,5 +1,10 @@
 body {
-    background-color: #b3b3b3;
+    background-color: #1c1f26;
+    color: #eae3d8;
+}
+
+a {
+    color: #7fc7d9;
 }
 
 img { width: 200px}

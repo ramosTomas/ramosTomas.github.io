@@ -5,22 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cidade</title>
     <link rel="stylesheet" href="styles2.css" />
+    <!-- Para fazer o style usei o vídeo: https://youtube.com/shorts/FP7qQR9sqcE?si=YPtTOBNaZhNT0Cam -->
+    <!-- Existe outra forma de colocar 4 em cima 4 em baixo sem ser com o calc ???-->>
+    <style>
+      .fotografias {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .fotografias img {
+        width: calc(25% - 20px);
+        height: 300px;
+        border-radius: 13px;
+        box-shadow: 4px 7px 7px 0px #00000042;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <h1 class="A minha Cidade">
+      <h1 class="Odense">
         <a href="../../index.html">A minha Cidade</a>
       </h1>
     </header>
     <main>
-      <h2>Multimédia</h2>
       <nav>
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
         <a href="multimedia.html">Multimédia</a>
         <a href="info.html">Informação</a>
       </nav>
-      <p>A minha cidade é muito linda!!!</p>
+
+      <h2>Multimédia</h2>
+      <p>Nesta página irá encontrar algumas fotos, um vídeo e ainda um poema acerca de Odense.</p>
+
+      <p>
+        <a href = "#Fotografias"><Fotografias/a>
+        <a href =
+      </p>
+
+      <section>
+        <h3 id = "Fotografias">Fotografias</h3>
+        <div class = "fotografias">
+          <img src = "../images2/sankt-knuds.jpg" alt = "Catedral de St. Canute">
+          <img src = "../images2/museu.jpg" alt = "Museu Hans Christian Andersen">
+          <img src = "../images2/odense-zoo-4.jpg" alt = "Zoo de Odense">
+          <img src = "../images2/munke-mose.jpg" alt = "Munke Mose">
+          <img src = "../images2/odense-Slot.jpg" alt = "Castelo de Odense">
+          <img src = "../images2/brandts.jpg" alt = "Brandts">
+          <img src = "../images2/havnebadet.jpg" alt = "Odense Havnebad">
+          <img src = "../images2/odense-raadhus.jpg" alt = "Câmara Municipal">
+      </section>
+
+      <section>
+        <h3 id = "Vídeo">Video</h3>
+        <div class = "video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/loI2p4Sjg3k?si=X9-L__mejK9lQNwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section>
+        <h3 id = "Poesia">Poesia</h3>
+        <div class = "poesia">
+          <p>Odense</p>
+
+          <p>No leito manso do teu rio,</p>
+          <p>dorme a memória de um menino</p>
+          <p>que sonhou patos, gelo e frio,</p>
+          <p>e fez do mundo um livro fino.</p>
+
+          <p>Entre torres de tijolo antigo</p>
+          <p>e vidro novo a reluzir,</p>
+          <p>caminha a ciência lado a lado</p>
+          <p>com o silêncio a persistir.</p>
+
+          <p>Cidade que não grita, ensina,</p>
+          <p>que cresce devagar, sem pressa,</p>
+          <p>onde o passado se ilumina</p>
+          <p>na luz do norte que atravessa.</p>
+        </div>
+      </section>
+
     </main>
     <footer>
       <p>DIW 2026</p>
