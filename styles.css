@@ -7,4 +7,32 @@ a {
     color: #7fc7d9;
 }
 
-img { width: 200px}
+img {
+    width: 400px;
+}
+
+section > div.poesia > p:nth-child(even) {
+    border: 2px solid #C8102E;
+    margin-bottom: 1px;
+    display:inline-block;
+}
+
+table {
+    border: 2px solid #C8102E;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    color: #C8102E;
+}
+
+b {
+    color: #D9A441
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+h1:hover {color:blueviolet}
