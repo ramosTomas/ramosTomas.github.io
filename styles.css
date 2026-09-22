@@ -48,6 +48,7 @@ a {
 
 .tresImagens {
     display:flex;
+    width: 100px;
 }
 
 .tresImagens img {
