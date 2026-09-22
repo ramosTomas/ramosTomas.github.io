@@ -5,6 +5,10 @@ body {
     color: #eae3d8;
 }
 
+html {
+  background-color: #050c0f;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -48,24 +52,80 @@ a {
 
 .tresImagens {
     display:flex;
-    width: 100%;
+    justify-content: center;
 }
 
 .tresImagens img {
     border-radius: 13px;
     box-shadow: 4px 7px 7px 0px #00000042;
-    margin: 10px;
+    margin: 30px;
 }
 
 .tresImagens img:hover {
     opacity: 0.7;
 }
 
-.abordamos {
+.infoExplicada {
+    text-align: center;
+}
+
+.infoExplicada ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.labsConcluidos {
+    text-align: center;
+}
+
+.labsConcluidos ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.contactos ul {
+    list-style: none;
+}
+
+.links ul {
+    list-style: none;
+}
+
+.footerPrincipal {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 100px;
+    background-color: #1c1f26;
+}
+
+footer h2 {
+    text-align: center;
+}
+
+.segue-nos ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.segue-nos img {
+    width: 40px;
+    height: auto;
+}
+
+.extraFooter {
+    text-align: center;
     display:flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+    justify-content: center;
+    background-color: #050c0f;
+}
+
+.extraFooter p {
+    margin: 0%;
 }
 
 section > div.poesia > p:nth-child(even) {
