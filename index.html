@@ -5,29 +5,56 @@
     <title>Primeira Página</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
     <header>
-      <h1>Primeira Página Web!</h1>
+      <nav class="navbar">
+        <h1 class="logo" href="/">Odense</h1>
+        <ul class="navlinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="local.html">Localização</a></li>
+          <li><a href="multimedia.html">Multimédia</a></li>
+          <li><a href="info.html">Informação</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
+      <div class="tresImagens">
+        <figure>
+          <img src="images3/1-Odense.jpg" />
+        </figure>
+
+        <figure>
+          <img src="images3/2-odense.jpg" />
+        </figure>
+
+        <figure>
+          <img src="images3/3-odense.jpg" />
+        </figure>
+      </div>
+
       <p>Eis a minha primeira página Web!</p>
-      <p>
-        Na Unidade Curricular de
-        <a
-          href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
-          target="_blank"
-        >
-          Desenvolvimento de Interfaces Web
-        </a>
-        abordaremos as seguintes tecnologias Web &#127760;:
-      </p>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React e Next.js</li>
-      </ul>
+
+      <section class="abordamos">
+        <p>
+          Na Unidade Curricular de
+          <a
+            href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
+            target="_blank"
+          >
+            Desenvolvimento de Interfaces Web
+          </a>
+          abordaremos as seguintes tecnologias Web &#127760;:
+        </p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React e Next.js</li>
+        </ul>
+      </section>
+
       <p>Iremos criar soluções criativas!</p>
       <nav>
         <ul>
@@ -35,8 +62,8 @@
           <li><a href="Lab2/cidade/index.html">Lab2</a></li>
         </ul>
       </nav>
-      <img src="Lab1/images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
     </main>
+
     <footer>
       <p>Universidade Lusófona © 2025</p>
     </footer>
