@@ -5,7 +5,7 @@ body {
     color: #eae3d8;
 }
 
-.navbar {
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,7 +14,7 @@ body {
     padding: 15px 30px;
 }
 
-.navlinks {
+.nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
@@ -22,16 +22,12 @@ body {
     padding: 0;
 }
 
-.navlinks a {
+.nav-links a {
     color:#eae3d8;
     text-decoration: none;
 }
 
-.navlinks a:hover {
-    color: #D9A441;
-}
-
-.logo {
+.nav-links a:hover {
     color: #D9A441;
 }
 
@@ -44,38 +40,39 @@ a {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    color: #D9A441;
 }
 
-.tresImagens {
+.tres-Imagens {
     display:flex;
     justify-content: space-around;
 }
 
-.tresImagens img {
+.tres-Imagens img {
     border-radius: 13px;
-    box-shadow: 4px 7px 7px 0px #00000042;
+    box-shadow: 4px 7px 7px 0 #00000042;
     margin: 30px;
 }
 
-.tresImagens img:hover {
+.tres-Imagens img:hover {
     opacity: 0.7;
 }
 
-.infoExplicada {
+.info-Explicada {
     text-align: center;
 }
 
-.infoExplicada ul {
+.info-Explicada ul {
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
-.labsConcluidos {
+.labs-Concluidos {
     text-align: center;
 }
 
-.labsConcluidos ul {
+.labs-Concluidos ul {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -112,14 +109,14 @@ footer h2 {
     height: auto;
 }
 
-.footerMarca {
+.footer-Marca {
     display:flex;
     justify-content: center;
     background-color: #050c0f;
 }
 
-.extraFooter p {
-    margin: 0%;
+.extra-Footer p {
+    margin: 0;
 }
 
 section > div.poesia > p:nth-child(even) {
@@ -150,10 +147,11 @@ li {
     display: flex;
     flex-wrap: wrap;
 }
+
 .fotografias img {
-     width: calc(25% - 20px);
+    width: calc(25% - 20px);
     height: 300px;
     border-radius: 13px;
-    box-shadow: 4px 7px 7px 0px #00000042;
+    box-shadow: 4px 7px 7px 0 #00000042;
     margin: 10px;
 }
