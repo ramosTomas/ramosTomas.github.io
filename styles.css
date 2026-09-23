@@ -145,3 +145,15 @@ b {
 li {
     margin-bottom: 15px;
 }
+
+.fotografias {
+    display: flex;
+    flex-wrap: wrap;
+}
+.fotografias img {
+     width: calc(25% - 20px);
+    height: 300px;
+    border-radius: 13px;
+    box-shadow: 4px 7px 7px 0px #00000042;
+    margin: 10px;
+}
