@@ -5,10 +5,6 @@ body {
     color: #eae3d8;
 }
 
-html {
-  background-color: #050c0f;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -52,7 +48,7 @@ a {
 
 .tresImagens {
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .tresImagens img {
@@ -93,11 +89,10 @@ a {
     list-style: none;
 }
 
-.footerPrincipal {
-    display: flex;
-    justify-content: center;
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
-    gap: 100px;
     background-color: #1c1f26;
 }
 
@@ -106,9 +101,9 @@ footer h2 {
 }
 
 .segue-nos ul {
-    list-style: none;
     display: flex;
     justify-content: center;
+    list-style: none;
     gap: 30px;
 }
 
@@ -117,8 +112,7 @@ footer h2 {
     height: auto;
 }
 
-.extraFooter {
-    text-align: center;
+.footerMarca {
     display:flex;
     justify-content: center;
     background-color: #050c0f;
