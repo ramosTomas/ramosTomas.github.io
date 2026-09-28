@@ -3,113 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <title>Primeira Página</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="stylesRoot.css" />
   </head>
 
   <body>
     <header>
-      <nav class="nav-bar">
-        <h1 class="logo" href="/">Odense</h1>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Lab2/cidade/local.html">Localização</a></li>
-          <li><a href="Lab2/cidade/multimedia.html">Multimédia</a></li>
-          <li><a href="Lab2/cidade/info.html">Informação</a></li>
-        </ul>
-      </nav>
+      <h1>Menu</h1>
     </header>
 
     <main>
-      <div class="tres-Imagens">
-        <a href="Lab2/cidade/multimedia.html">
-          <img src="images3/1-Odense.jpg" />
-        </a>
-
-        <a href="Lab2/cidade/multimedia.html">
-          <img src="images3/2-odense.jpg" />
-        </a>
-
-        <a href="Lab2/cidade/multimedia.html">
-          <img src="images3/3-odense.jpg" />
-        </a>
-      </div>
-
-      <section class="info-Explicada">
-        <p>Eis a minha primeira página Web!</p>
-        <p>
-          Na Unidade Curricular de
-          <a
-            href="https://moodle.ensinolusofona.pt/course/view.php?id=27320"
-            target="_blank"
-          >
-            Desenvolvimento de Interfaces Web
-          </a>
-          abordaremos as seguintes tecnologias Web &#127760;:
-        </p>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React e Next.js</li>
-          <li></li>
-        </ul>
-      </section>
-
-      <section class="labs-Concluidos">
-        <p>Aqui encontras os laboratórios concluídos!</p>
-        <nav>
+      <section id="inicio" class="hero-image">
+        <div class="info-hero">
+          <h1>Odense: Tradição e Futuro</h1>
+          <p class="subtitulo">
+            Uma jornada visual pela cidade dinamarquesa que une o seu charme
+            histórico à vanguarda da tecnologia.
+          </p>
+          <p class="motivacional">
+            Onde as lendas do passado inspiram a engenharia do amanhã. Explora a
+            fusão perfeita entre a coragem viking e a inovação tecnológica.
+          </p>
+        </div>
+        <nav class="nav-hero">
           <ul>
-            <li><a href="Lab1/cidade/multimedia.html">Lab1</a></li>
-            <li><a href="Lab2/cidade/multimedia.html">Lab2</a></li>
-            <li></li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#interfaces">Interfaces</a></li>
           </ul>
         </nav>
       </section>
+
+      <section id="projetos" class="projetos">
+        <h2>Projetos / Labs</h2>
+        <p>Aqui podes encontrar o trabalho realizado ao longo da UC!</p>
+        <nav class="labs">
+          <ul>
+            <li><a href="Lab1/index.html">Lab1</a></li>
+            <li><a href="Lab2/index.html">Lab2</a></li>
+            <li><a href="Lab3/index.html">Lab3</a></li>
+            <
+          </ul>
+        </nav>
+      </section>
+
+      <section id="disciplina" class="disciplina"></section>
     </main>
 
-    <footer>
-      <section class="contactos">
-        <h2>Contactos</h2>
-        <nav>
-          <ul>
-            <li>contacto@odense-cidade.pt</li>
-            <li>+351 912 345 678</li>
-            <li>
-              <a
-                href="https://maps.app.goo.gl/2bKG7JXPRdHwU6Mi7"
-                target="_blank"
-                >Campo Grande, 376, 1749-024 Lisboa, Portugal</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </section>
-
-      <section class="links">
-        <h2>Links</h2>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Lab2/cidade/local.html">Localização</a></li>
-            <li><a href="Lab2/cidade/multimedia.html">Multimédia</a></li>
-            <li><a href="Lab2/cidade/info.html">Informação</a></li>
-          </ul>
-        </nav>
-      </section>
-
-      <section class="segue-nos">
-        <h2>Segue-nos</h2>
-        <nav>
-          <ul>
-            <li><img src="images3/instagram.png" /></li>
-            <li><img src="images3/twitter.png" /></li>
-            <li><img src="images3/linkedin.png" /></li>
-          </ul>
-        </nav>
-      </section>
-    </footer>
-    <div class="footer-Marca">
-      <p>Universidade Lusófona © 2025</p>
-    </div>
+    <footer></footer>
   </body>
 </html>

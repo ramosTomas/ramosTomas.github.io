@@ -1,0 +1,139 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+    background-color: #10262e;
+    padding: 30px;
+    top:0;
+    margin:0;
+    position: sticky;
+    z-index: 10000;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    margin:0;
+}
+
+.hero-image {
+    height: 100vh;
+    background-color: #559cd5;
+    background-image: url('Lab3/images3/vikings.jpeg');
+    background-size: cover;
+    background-position: right bottom;
+}
+
+.info-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    color: black;
+    padding: 60px;
+}
+
+.info-hero h1 {
+    font-size: 50px;
+    margin-bottom:20px;
+}
+
+.info-hero p {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    margin-bottom: 20px;
+}
+
+.subtitulo {
+    font-size: 30px;
+}
+
+.motivacional {
+    font-size:24px;
+}
+
+.nav-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-hero ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding:0;
+    justify-content: center;
+}
+
+.nav-hero a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #10262e;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.nav-hero a:hover {
+    background-color: grey;
+    color: white;
+    border-color: black;
+}
+
+.projetos {
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    background-color: #10262e;
+    color: white;
+    padding: 60px;
+}
+
+.projetos h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.projetos p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.projetos ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding:0;
+    justify-content: center;
+}
+
+.projetos a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.projetos a:hover {
+    background-color: grey;
+    color: white;
+    border-color: black;
+}
+
+.disciplina {
+    height:100vh
+}
+

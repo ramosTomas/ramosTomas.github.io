@@ -80,6 +80,7 @@ a {
 
 .contactos ul {
     list-style: none;
+    padding: 0;
 }
 
 .links ul {
@@ -102,11 +103,16 @@ footer h2 {
     justify-content: center;
     list-style: none;
     gap: 30px;
+    padding:0;
 }
 
 .segue-nos img {
     width: 40px;
     height: auto;
+}
+
+.links ul {
+    padding: 0;
 }
 
 .footer-Marca {
