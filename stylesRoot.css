@@ -20,7 +20,7 @@ header h1 {
 }
 
 .hero-image {
-    height: 100vh;
+    height: 80vh;
     background-color: #559cd5;
     background-image: url('Lab3/images3/vikings.jpeg');
     background-size: cover;
@@ -89,12 +89,12 @@ header h1 {
 }
 
 .projetos {
-    height:100vh;
+    height:50vh;
     display: flex;
     flex-direction: column;
     align-items: start;
     text-align: start;
-    background-color: #10262e;
+    background-color: grey;
     color: white;
     padding: 60px;
 }
@@ -134,6 +134,89 @@ header h1 {
 }
 
 .disciplina {
-    height:100vh
+    height:35vh;
+    background-color: white;
+    color: #1c1f26;
 }
 
+.disciplina p {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    font-size: 20px;
+}
+
+.disciplina a {
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.disciplina ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding:0;
+    justify-content: center;
+}
+
+.DIW {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disciplina img {
+    width: 200px;
+}
+
+footer {
+    height:10vh;
+    color:white
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    padding: 35px;
+}
+
+
+@media (max-width: 768px) {
+  .info-hero,
+  .projetos {
+    padding: 30px 20px;
+  }
+
+  .info-hero h1 {
+    font-size: 32px;
+  }
+
+  .subtitulo {
+    font-size: 20px;
+  }
+
+  .motivacional {
+    font-size: 16px;
+  }
+
+  .projetos h2 {
+    font-size: 24px;
+  }
+
+  .projetos p {
+    font-size: 18px;
+  }
+
+  .nav-hero ul, .projetos ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-hero a, .projetos a {
+    width: 80%;
+    text-align: center;
+  }
+}
