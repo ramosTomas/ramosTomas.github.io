@@ -2,6 +2,7 @@
   margin: 0;
   padding:0;
   box-sizing:border-box;
+  font-family: "JetBrains Mono", Consolas, monospace;
 }
 
 header { grid-area: header-area; }
@@ -12,12 +13,12 @@ body {
     min-height: 100vh;
     display: grid;
     padding:5px;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 95px auto 80px;
     grid-template-areas:
-            "header-area header-area header-area"
-            "main-area main-area main-area"
-            "footer-area footer-area footer-area";
+            "header-area"
+            "main-area"
+            "footer-area";
 }
 
 body > * {
@@ -25,17 +26,172 @@ body > * {
     color: white;
 }
 
+.toca-aqui   { grid-area: a1; }
+.pinta-me    { grid-area: a2; }
+.escreveCor  { grid-area: a3; }
+.coordenadas { grid-area: a4; }
+.contador    { grid-area: a5; }
+
+main {
+  min-height: 100vh;
+  display: grid;
+  padding:5px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+          "a1"
+          "a2"
+          "a3"
+          "a4"
+          "a5";
+}
+
 header {
-    background-color: #008B8B;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #161b26;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 15px;
 }
 
+.menu {
+  display:flex;
+  align-items: center;
+  background-color: beige;
+  border-radius: 13px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu:hover {
+  background-color: white;
+}
+
 .toca-aqui {
+  min-height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  color:black;
+  background-color: #1e2433;
+  height: 35%;
 }
+
+.toca-aqui h2 {
+  background-color: beige;
+  padding: 35px;
+  border-radius: 13px;
+}
+
+.pinta-me {
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: beige;
+  height: 35%;
+}
+
+.pintaTudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: #1e2433;
+  padding: 35px;
+  border-radius: 13px;
+}
+
+.pinta-me input {
+  margin-top: 10px;
+}
+
+.escreveCor {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background-color: #1e2433;
+  height: 35%;
+}
+
+.escreveCor h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.boxEscreve {
+  background-color: beige;
+  padding: 35px;
+  border-radius: 13px;
+}
+
+.escreve input{
+  margin-top: 10px;
+}
+
+.coordenadas {
+  min-height: 40vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+
+.boxCoordenadas {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e2433;
+  padding:35px;
+  border-radius: 13px;
+}
+
+.contador {
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e2433;
+  color: black;
+}
+
+.boxContador {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+  padding: 35px;
+  border-radius: 13px;
+}
+
+.boxContador h2 {
+  margin-bottom: 10px;
+}
+
+#button1 {
+  margin-bottom: 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161b26;
+}
+
 

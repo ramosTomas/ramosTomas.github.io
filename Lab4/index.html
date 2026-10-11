@@ -3,22 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <title>Primeira Página</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
     <header>
-      <h1>JS Sandbox</h1>
-      Experimenta o que o JS permite fazer!
+      <section class="titulo-header">
+        <h1>JS Sandbox</h1>
+        Experimenta o que o JS permite fazer!
+      </section>
+      <nav class="menu">
+        <h2><a href="../index.html">Menu</a></h2>
+      </nav>
     </header>
 
     <main>
       <section class="toca-aqui">
-        <p>Passa aqui com o rato!</p>
+        <h2>Passa aqui com o rato!</h2>
       </section>
-    </main>
 
-    <footer></footer>
+      <section class="pinta-me">
+        <section class="pintaTudo">
+          <h2>Pinta-me!</h2>
+          <input type="color"></input>
+        </section>
+      </section>
+
+      <section class="escreveCor">
+        <section class="boxEscreve">
+          <h2>Escreve aqui:</h2>
+            <section class="escreve">
+              <input type="text">
+              <button id="submeter">Submeter</button>
+            </section>
+        </section>
+      </section>
+
+      <section class="coordenadas">
+        <section class="boxCoordenadas">
+          <h2>Onde estás?</h2>
+          <section id="area">
+            Mexe o rato aqui dentro
+          </section>
+          <output id="posicao">x: 0, y: 0</output>
+        </section>
+      </section>
+
+      <section class="contador">
+        <section class="boxContador">
+          <h2>0</h2>
+          <button id="button1">Contar</button>
+          <button id="button2">Repor(Double Click)</button>
+        </section>
+      </section>
+
+    </main>
+    <footer>
+      <p>Universidade Lusófona © 2025</p>
+    </footer>
     <script src="../Lab4/scripts/main.js"></script>
   </body>
 </html>
