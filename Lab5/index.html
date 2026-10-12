@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Primeira Página</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <section class="titulo-header">
+        <h1>JS Sandbox</h1>
+        Experimenta o que o JS permite fazer!
+      </section>
+      <nav class="menu">
+        <h2><a href="../index.html">Menu</a></h2>
+      </nav>
+    </header>
+
+    <main>
+      <section class="toca-aqui">
+        <h2>Passa aqui com o rato!</h2>
+      </section>
+
+      <section class="pinta-me">
+        <section class="pintaTudo">
+          <h2>Pinta-me!</h2>
+          <nav class="butoesCor">
+            <button data-color="red">Red</button>
+            <button data-color="green">Green</button>
+            <button data-color="blue">Blue</button>
+          </nav>
+        </section>
+      </section>
+
+      <section class="escreveCor">
+        <section class="boxEscreve">
+          <h2>Escreve aqui:</h2>
+          <section class="escreve">
+            <input type="text" />
+          </section>
+        </section>
+      </section>
+
+      <section class="corSeccao">
+        <section class="escreveIngles">
+          <h2>Escreve uma cor em inglês:</h2>
+          <input type="text" />
+          <button id="submeter">Submeter</button>
+        </section>
+
+        <section class="boxEscolhe">
+          <h2>Escolhe uma cor!</h2>
+          <select id="opcoesCores">
+            <option value="" hidden>Cores</option>
+            <option value="orange">Orange</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="beige">Beige</option>
+          </select>
+        </section>
+      </section>
+
+      <section class="contador">
+        <section class="boxContador">
+          <h2>0</h2>
+          <button id="button1">Contar</button>
+          <button id="button2">Repor(Double Click)</button>
+        </section>
+      </section>
+
+      <section class="containerBolas">
+        <h2>Organiza como quiseres:</h2>
+        <section class="bolas">
+          <div class="bola"></div>
+          <div class="bola"></div>
+          <div class="bola"></div>
+          <div class="bola"></div>
+        </section>
+
+        <select id="opcoesOrganizacao">
+          <option value="" hidden>Opções</option>
+          <option value="row">Row</option>
+          <option value="row-reverse">Row-Reverse</option>
+          <option value="column">Line</option>
+          <option value="column-reverse">Line-Reverse</option>
+        </select>
+      </section>
+    </main>
+    <footer>
+      <p>Universidade Lusófona © 2025</p>
+    </footer>
+    <script src="../Lab5/scripts/main.js"></script>
+  </body>
+</html>
