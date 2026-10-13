@@ -57,19 +57,36 @@ corEscolhida.addEventListener("change", function() {
 
 //----------------------------------------------------//
 
-let contador = 0;
+let contador = localStorage.getItem(`contador`);
 const valorAtual = document.querySelector(".boxContador h2")
 const contar = document.querySelector("#button1");
-const repor = document.querySelector("#button2");
+const decrementar = document.querySelector("#button2");
+const repor = document.querySelector("#button3");
 
 contar.addEventListener("click", () => {
-  contador++;
-  valorAtual.textContent = contador;
+  if (!localStorage.getItem(`contador`)) {
+    localStorage.setItem(`contador`, 0);
+  } else {
+    contador++;
+    valorAtual.textContent = contador;
+    localStorage.setItem(`contador`, contador)
+  }
+});
+
+decrementar.addEventListener("click", () => {
+  if (!localStorage.getItem(`contador`)) {
+    localStorage.setItem(`contador`, 0);
+  } else {
+    contador--;
+    valorAtual.textContent = contador;
+    localStorage.setItem(`contador`, contador)
+  }
 });
 
 repor.addEventListener("dblclick", () => {
   contador = 0;
   valorAtual.textContent = contador;
+  localStorage.setItem(`contador`, 0);
 });
 
 //----------------------------------------------------//
@@ -81,8 +98,31 @@ organizacaoEscolhida.addEventListener("change", function() {
   organizacao.style.flexDirection = this.value;
 })
 
+//----------------------------------------------------//
 
+const nomeInserido = document.querySelector("#nome");
+const idadeInserido = document.querySelector("#idade");
+const resultadoFinal = document.querySelector("#resultado");
 
+document.querySelector('form').onsubmit = (e) => {
+    e.preventDefault()
+    if (nomeInserido.value.length == "" || idadeInserido.value.length == "") {
+      resultadoFinal.textContent = "Tens de preencher ambos os campos!"
+    } else {
+      resultadoFinal.textContent = `Olá, o ${nomeInserido.value} tem ${idadeInserido.value} anos!`;
+    }
+};
 
+//----------------------------------------------------//
 
+let tempoCont = 0;
+const incrementaCont = document.querySelector("#tempo");
 
+function contarTempo() {
+  tempoCont++;
+  incrementaCont.textContent = tempoCont;
+}
+
+window.addEventListener("load", () => {
+  setInterval(contarTempo, 1000);
+})
