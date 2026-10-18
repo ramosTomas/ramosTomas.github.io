@@ -27,7 +27,7 @@ body > * {
 }
 
 header {
-    background-color: #008B8B;
+    background-color: #008b8b;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@ header {
 
 main {
     background-color: #B22222;
-    padding: 10px;
+    padding:10px;
 }
 
 aside {
@@ -47,21 +47,21 @@ aside {
 footer {
     background-color: #556B2F;
     color: black;
-    display: flex;
+    display:flex;
+    justify-content: start;
     align-items: center;
-    padding: 15px;
+    padding:15px;
 }
 
 section {
     background-color: #CD5C5C;
     padding: 10px;
-    margin: 10px;
+    margin:10px;
     border: 2px solid black;
 }
 
 li {
-    display: flex;
-    justify-content: flex-start;
+    list-style: none;
 }
 
 
