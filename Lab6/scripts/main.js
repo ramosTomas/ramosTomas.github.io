@@ -47,14 +47,15 @@ function atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos)
     nodeUlRepetidos.append(li);
   });
 
-  //TERMINAR !!!!!!!!!!!!!!!
   const eliminarReps = document.querySelectorAll('#repetidos button');
   eliminarReps.forEach((botao) => {
     botao.onclick = () => {
-      botao.remove();
+      const index = cromosRepetidos.indexOf(botao);
+      cromosRepetidos.splice(index, 1);
+      atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos);
+      totalRepetidos.textContent = cromosRepetidos.length;
     }
   })
-
 }
 
 function verificaExistencia(colecao, nodeInputNumero) {
