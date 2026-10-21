@@ -1,35 +1,32 @@
 // declaração de variáveis
 const nodeInputNumero = document.querySelector('#numero');
 const nodeInputSubmit = document.querySelector('#submit');
-const nodeUlColecao = document.querySelector('ul');
+const nodeUlColecao = document.querySelector('#colecao ul');
 const nodeUlRepetidos = document.querySelector('#repetidos ul');
 const formColecao = document.querySelector('form');
-const totalCromos = document.querySelector('span');
+const totalCromos = document.querySelector('#colecao span');
 const totalRepetidos = document.querySelector('#repetidos span');
-const colecao = [];
-const cromosRepetidos = [];
+
+const colecao = JSON.parse(localStorage.getItem('colecao')) || [];
+const cromosRepetidos = JSON.parse(localStorage.getItem('cromosRepetidos')) || [];
 
 // B. event handlers
+function guardarStorage() {
+  localStorage.setItem('colecao', JSON.stringify(colecao));
+  localStorage.setItem('cromosRepetidos', JSON.stringify(cromosRepetidos));
+}
+
 function guardaCarta() {
-  let existe = false;
-  if (verificaExistencia(colecao, nodeInputNumero)) {
-    cromosRepetidos.push(nodeInputNumero.value);
-    existe = true;
+  const numero = nodeInputNumero.value;
+  if (verificaExistencia(colecao, numero)) {
+    cromosRepetidos.push(numero);
   } else {
-    colecao.push(nodeInputNumero.value);
+    colecao.push(numero);
   }
-  colecao.sort(function(a,b) {
-    return a-b;
-  });
-  cromosRepetidos.sort(function(a,b) {
-    return a-b;
-  });
+  colecao.sort((a, b) => a - b);
+  cromosRepetidos.sort((a, b) => a - b);
+  guardarStorage();
   atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos);
-  if (existe) {
-    totalRepetidos.textContent = cromosRepetidos.length;
-  } else {
-    totalCromos.textContent = colecao.length;
-  }
 }
 
 function atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos) {
@@ -41,6 +38,7 @@ function atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos)
     li.textContent = elemento;
     nodeUlColecao.append(li);
   });
+
   cromosRepetidos.forEach((elemento) => {
     const li = document.createElement("li");
     li.innerHTML = `${elemento} <button data-numero="${elemento}">Eliminar</button>`;
@@ -50,16 +48,20 @@ function atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos)
   const eliminarReps = document.querySelectorAll('#repetidos button');
   eliminarReps.forEach((botao) => {
     botao.onclick = () => {
-      const index = cromosRepetidos.indexOf(botao);
+      const numero = Number(botao.dataset.numero);
+      const index = cromosRepetidos.indexOf(numero);
       cromosRepetidos.splice(index, 1);
+      guardarStorage();
       atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos);
-      totalRepetidos.textContent = cromosRepetidos.length;
-    }
-  })
+    };
+  });
+
+  totalCromos.textContent = colecao.length;
+  totalRepetidos.textContent = cromosRepetidos.length;
 }
 
-function verificaExistencia(colecao, nodeInputNumero) {
-  return colecao.includes(nodeInputNumero.value);
+function verificaExistencia(lista, numero) {
+  return lista.includes(numero);
 }
 
 // C. event listeners
@@ -67,4 +69,6 @@ formColecao.onsubmit = (event) => {
   event.preventDefault();
   guardaCarta();
 }
+
+atualizaLista(colecao, cromosRepetidos, nodeUlColecao, nodeUlRepetidos);
 
