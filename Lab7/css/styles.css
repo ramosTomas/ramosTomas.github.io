@@ -61,6 +61,16 @@ main {
     background-color: beige;
 }
 
+#produtos {
+    color: black;
+    display: flex;
+    gap: 15px;
+}
+
+#produtos img {
+    width: 250px;
+}
+
 footer {
     background-color: #1e2433;
 }
