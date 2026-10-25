@@ -13,13 +13,16 @@ function criarProduto(produto) {
     const imagem = document.createElement('img');
     imagem.src = produto.image;
 
+    const preco = document.createElement('p');
+    preco.textContent = 'Custo Total: ' + produto.price + '€';
+
     const descricao = document.createElement('p');
     descricao.textContent = produto.description;
 
-    const preco = document.createElement('p');
-    preco.textContent = produto.price;
+    const button = document.createElement('button');
+    button.innerHTML = `<button>+ Adicionar ao cesto</button>`;
 
-    article.append(titulo,imagem,descricao,preco);
+    article.append(titulo,imagem,preco,descricao, button);
     return article;
 }
 
