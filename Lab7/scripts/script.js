@@ -2,6 +2,7 @@
 const nodeSectionProdutos = document.querySelector('#produtos');
 const nodeSectionCesto = document.querySelector('#cesto');
 
+const produtosSelecionados = JSON.parse(localStorage.getItem('produtosSelecionados')) || [];
 
 // B. Funções utilitárias
 function criarProduto(produto) {
@@ -20,9 +21,37 @@ function criarProduto(produto) {
     descricao.textContent = produto.description;
 
     const button = document.createElement('button');
-    button.innerHTML = `<button>+ Adicionar ao cesto</button>`;
+    button.textContent = '+ Adicionar ao cesto';
+    button.addEventListener("click", () => {
+        produtosSelecionados.push(produto);
+        guardarProduto();
+    });
 
     article.append(titulo,imagem,preco,descricao, button);
+    return article;
+}
+
+function atualizaCesto() {
+    nodeSectionCesto.textContent = '';
+    produtosSelecionados.forEach((produto) => {
+        const artigoCesto = criaProdutoCesto(produto);
+        nodeSectionCesto.append(artigoCesto);
+    })
+}
+
+function criaProdutoCesto(produto) {
+    const article = document.createElement('article');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = produto.title;
+
+    const imagem = document.createElement('img');
+    imagem.src = produto.image;
+
+    const preco = document.createElement('p');
+    preco.textContent = 'Custo Total: ' + produto.price + '€';
+
+    article.append(titulo, imagem, preco);
     return article;
 }
 
@@ -32,6 +61,11 @@ function renderizarProdutos(produtos) {
         const novoProduto = criarProduto(produto);
         nodeSectionProdutos.append(novoProduto);
     });
+}
+
+function guardarProduto() {
+  localStorage.setItem('produtosSelecionados', JSON.stringify(produtosSelecionados));
+  atualizaCesto();
 }
 
 // D. Inicialização
