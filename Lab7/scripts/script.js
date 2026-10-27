@@ -51,7 +51,15 @@ function criaProdutoCesto(produto) {
     const preco = document.createElement('p');
     preco.textContent = 'Custo Total: ' + produto.price + '€';
 
-    article.append(titulo, imagem, preco);
+    const button = document.createElement('button');
+    button.textContent = '- Remover do cesto';
+    button.addEventListener("click", () => {
+        const posicaoProduto = produtosSelecionados.findIndex(p => p.id === produto.id);
+        produtosSelecionados.splice(posicaoProduto, 1);
+        guardarProduto();
+    })
+
+    article.append(titulo, imagem, preco, button);
     return article;
 }
 
@@ -70,3 +78,4 @@ function guardarProduto() {
 
 // D. Inicialização
 renderizarProdutos(produtos);
+atualizaCesto();

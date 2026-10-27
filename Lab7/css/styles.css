@@ -26,6 +26,9 @@ body > * {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background-color: #1e2433;
     border: 5px solid darkgray;
     display: flex;
@@ -69,7 +72,7 @@ main h2 {
     margin: 50px;
 }
 
-#produtos {
+#produtos, #cesto {
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -89,19 +92,19 @@ main h2 {
     flex-direction: column;
 }
 
-#produtos h3 {
+#produtos h3, #cesto h3 {
     text-align: center;
     align-self: stretch;
     padding: 10px;
 }
 
-#produtos img {
+#produtos img, #cesto img {
     width: 220px;
     align-self: center;
     border-radius: 13px;
 }
 
-#produtos p:first-of-type {
+#produtos p:first-of-type, #cesto p {
     color: #e9b44c;
     align-self: center;
     padding: 10px;
@@ -119,7 +122,7 @@ main h2 {
     text-align: left;
 }
 
-#produtos button {
+#produtos button, #cesto button {
     display: flex;
     justify-content: center;
     align-self: center;
@@ -130,6 +133,30 @@ main h2 {
     padding-right: 5px;
     padding-top: 2px;
     padding-bottom: 2px;
+}
+
+#cesto {
+    background-color: #1e2433;
+    margin-top: 50px;
+    color: #2a3247;
+}
+
+#cesto article {
+    margin-top: 50px;
+    background-color: beige;
+    border: 5px solid gray;
+    border-radius: 13px;
+    padding: 15px;
+    width: 450px;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+#cesto p {
+    color:#2a3247;
 }
 
 footer {
