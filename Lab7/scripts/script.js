@@ -2,6 +2,12 @@
 const nodeSectionProdutos = document.querySelector('#produtos');
 const nodeSectionCesto = document.querySelector('#cesto');
 
+const nodeFooter = document.querySelector('footer');
+const textoFooter = document.createElement('p');
+textoFooter.textContent = 'DIW - 2026';
+nodeFooter.append(textoFooter);
+
+const nodeContador = document.createElement('p');
 const produtosSelecionados = JSON.parse(localStorage.getItem('produtosSelecionados')) || [];
 
 // B. Funções utilitárias
@@ -37,6 +43,10 @@ function atualizaCesto() {
         const artigoCesto = criaProdutoCesto(produto);
         nodeSectionCesto.append(artigoCesto);
     })
+
+     const precoTotal = produtosSelecionados.reduce((soma, produto) => soma + Number(produto.price), 0);
+     nodeContador.textContent = 'Custo Total: ' + precoTotal + '€';
+     nodeSectionCesto.append(nodeContador);
 }
 
 function criaProdutoCesto(produto) {
