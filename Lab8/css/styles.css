@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "JetBrains Mono", Consolas, monospace;
+}
+
+header { grid-area: header-area; }
+main { grid-area: main-area; }
+footer { grid-area: footer-area; }
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 95px auto 80px;
+    grid-template-areas:
+            "header-area"
+            "main-area"
+            "footer-area";
+}
+
+body > * {
+    border: 2px solid darkgray;
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #1e2433;
+    border: 5px solid darkgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 10px;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+
+header li {
+    list-style: none;
+    background-color: beige;
+    padding:15px;
+    border-radius: 13px;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    background-color: beige;
+}
+
+main h2 {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+#produtos, #cesto {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+#produtos article {
+    background-color: #1e2433;
+    border: 5px solid gray;
+    border-radius: 13px;
+    padding: 15px;
+    width: 450px;
+    height: 650px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#produtos h3, #cesto h3 {
+    text-align: center;
+    align-self: stretch;
+    padding: 10px;
+}
+
+#produtos img, #cesto img {
+    width: 220px;
+    align-self: center;
+    border-radius: 13px;
+}
+
+#produtos p:first-of-type, #cesto p {
+    color: #e9b44c;
+    align-self: center;
+    padding: 10px;
+    text-align: left;
+}
+
+#produtos p:last-of-type {
+    background-color: #2a3247;
+    color: #cfd4e0;
+    font-style: italic;
+    border-radius: 13px;
+    width: 400px;
+    align-self: center;
+    padding: 10px;
+    text-align: left;
+}
+
+#produtos button, #cesto button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: 0;
+    border-radius: 5px;
+    margin-top:auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#cesto {
+    background-color: #1e2433;
+    margin-top: 50px;
+    color: #2a3247;
+}
+
+#cesto article {
+    margin-top: 50px;
+    background-color: beige;
+    border: 5px solid gray;
+    border-radius: 13px;
+    padding: 15px;
+    width: 450px;
+    height: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+#cesto p {
+    color:#2a3247;
+}
+
+#cesto p:last-child{
+    color: white;
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #1e2433;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
