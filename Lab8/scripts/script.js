@@ -2,6 +2,12 @@
 const nodeSectionProdutos = document.querySelector('#produtos');
 const nodeSectionCesto = document.querySelector('#cesto');
 
+const dataStorage = [];
+
+const buttonFiltragem = document.querySelector("#filtragem");
+const buttonOrdenacao = document.querySelector("#ordenacao");
+const pesquisaTexto = document.querySelector("input");
+
 const nodeFooter = document.querySelector('footer');
 const textoFooter = document.createElement('p');
 textoFooter.textContent = 'DIW - 2026';
@@ -14,6 +20,7 @@ const produtosSelecionados = JSON.parse(localStorage.getItem('produtosSelecionad
 fetch("https://deisishop.pw.deisi.ulusofona.pt/products")
     .then(response => response.json())
     .then(data => {
+        dataStorage.push(...data);
         renderizarProdutos(data);
     })
 
@@ -80,12 +87,58 @@ function criaProdutoCesto(produto) {
     return article;
 }
 
+buttonFiltragem.addEventListener("change", () => {
+    const sortType = buttonFiltragem.value;
+    if (sortType !== "Todas") {
+        renderizarProdutosSorted(dataStorage, sortType);
+    } else {
+        renderizarProdutos(dataStorage);
+    }
+})
+
+buttonOrdenacao.addEventListener("change", () => {
+    const sortType = buttonOrdenacao.value;
+    const copiaDataStorage = [...dataStorage]; //Para não me esquecer: O sort desfaz a ordem da data, por isso faço uma copia que serve só para o sort.
+    if (sortType !== "preco") {
+        renderizarProdutosPreco(copiaDataStorage, sortType);
+    } else {
+        renderizarProdutos(copiaDataStorage);
+    }
+})
+
+pesquisaTexto.addEventListener("input", () => {
+    const textoEscrito = pesquisaTexto.value;
+    renderizarProdutosTexto(dataStorage, textoEscrito.toLowerCase());
+})
+
 // C. Event handlers
 function renderizarProdutos(produtos) {
+    nodeSectionProdutos.innerHTML = "";
     produtos.forEach(produto => {
         const novoProduto = criarProduto(produto);
         nodeSectionProdutos.append(novoProduto);
     });
+}
+
+function renderizarProdutosSorted(produtos, filtro) {
+    const produtosSorted = produtos.filter(produto => produto.category.includes(filtro));
+    renderizarProdutos(produtosSorted);
+}
+
+function renderizarProdutosPreco(produtos, ordenacao) {
+    const produtosPreco = produtos.sort((a,b) => {
+        if(ordenacao === "precoAsc") {
+            return b.price - a.price;
+        } else {
+            return a.price - b.price;
+        }
+    });
+    renderizarProdutos(produtosPreco);
+};
+
+function renderizarProdutosTexto(produtos, texto) {
+    const produtosTexto = produtos.filter(produto => produto.title.toLowerCase().includes(texto));
+    renderizarProdutos(produtosTexto);
 }
 
 function guardarProduto() {
@@ -94,5 +147,4 @@ function guardarProduto() {
 }
 
 // D. Inicialização
-renderizarProdutos(produtos);
 atualizaCesto();

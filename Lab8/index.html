@@ -19,12 +19,31 @@
 
     <main>
       <h2>Selecione os seus Produtos</h2>
+      <select id="filtragem">
+        <h3>Filtrar</h3>
+        <option value="Todas">Todas as Categorias</option>
+        <option value="T-shirts">T-Shirts</option>
+        <option value="Caneca">Canecas</option>
+        <option value="Meias">Meias</option>
+      </select>
+
+      <select id="ordenacao">
+        <h3>Ordenar</h3>
+        <option value="preco">Ordenar pelo Preço</option>
+        <option value="precoAsc">Preço Decrescente</option>
+        <option value="precoDesc">Preço Crescente</option>
+      </select>
+
+      <section id="escreve">
+        <h3>Escreve aqui:</h3>
+        <input type="text" />
+      </section>
+
       <section id="produtos"></section>
       <section id="cesto"></section>
     </main>
 
     <footer></footer>
-    <script src="scripts/produtos.js"></script>
     <script src="scripts/script.js"></script>
   </body>
 </html>
