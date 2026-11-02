@@ -18,29 +18,63 @@
     </header>
 
     <main>
-      <h2>Selecione os seus Produtos</h2>
-      <select id="filtragem">
-        <h3>Filtrar</h3>
-        <option value="Todas">Todas as Categorias</option>
-        <option value="T-shirts">T-Shirts</option>
-        <option value="Caneca">Canecas</option>
-        <option value="Meias">Meias</option>
-      </select>
+      <section class="escolhaProdutos">
+        <h2>Selecione os seus Produtos</h2>
+        <section class="opcoesBusca">
+          <section class="filtro">
+            <label for="filtragem">Filtrar</label>
+            <select id="filtragem">
+              <option value="Todas">Todas as Categorias</option>
+              <option value="T-shirts">T-Shirts</option>
+              <option value="Caneca">Canecas</option>
+              <option value="Meias">Meias</option>
+            </select>
+          </section>
 
-      <select id="ordenacao">
-        <h3>Ordenar</h3>
-        <option value="preco">Ordenar pelo Preço</option>
-        <option value="precoAsc">Preço Decrescente</option>
-        <option value="precoDesc">Preço Crescente</option>
-      </select>
+          <section class="ordem">
+            <label for="ordenacao">Ordenar</label>
+            <select id="ordenacao">
+              <option value="preco">Ordenar pelo Preço</option>
+              <option value="precoAsc">Preço Decrescente</option>
+              <option value="precoDesc">Preço Crescente</option>
+            </select>
+          </section>
 
-      <section id="escreve">
-        <h3>Escreve aqui:</h3>
-        <input type="text" />
+          <section class="escrita">
+            <label for="input">Escreve aqui:</label>
+            <section id="escreve">
+              <input type="text" id="input" />
+            </section>
+          </section>
+        </section>
+
+        <section id="produtos"></section>
       </section>
 
-      <section id="produtos"></section>
-      <section id="cesto"></section>
+      <section class="produtosSelecionados">
+        <h2>O teu Cesto</h2>
+        <section id="cesto"></section>
+      </section>
+
+      <section class="pagamento">
+        <p>Custo Total:<span id="precoPorPagar"></span></p>
+
+        <section class="estudante">
+          <label for="check">És estudante do DEISI?</label>
+          <input type="checkbox" id="check" />
+        </section>
+
+        <section class="cupao">
+          <label for="desconto">Cupão de desconto:</label>
+          <section id="escreveCupao">
+            <input type="text" id="desconto" />
+          </section>
+        </section>
+
+        <button class="comprar">Comprar</button>
+
+        <section class="info"></section>
+      </section>
     </main>
 
     <footer></footer>

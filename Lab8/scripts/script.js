@@ -1,20 +1,24 @@
 // A. Estado e variáveis com referência de elementos do DOM
 const nodeSectionProdutos = document.querySelector('#produtos');
 const nodeSectionCesto = document.querySelector('#cesto');
+const nodeSectionInfo = document.querySelector('.info');
 
 const dataStorage = [];
 
 const buttonFiltragem = document.querySelector("#filtragem");
 const buttonOrdenacao = document.querySelector("#ordenacao");
-const pesquisaTexto = document.querySelector("input");
+const pesquisaTexto = document.querySelector("#input");
 
 const nodeFooter = document.querySelector('footer');
 const textoFooter = document.createElement('p');
 textoFooter.textContent = 'DIW - 2026';
 nodeFooter.append(textoFooter);
 
-const nodeContador = document.createElement('p');
+const nodeContador = document.querySelector('#precoPorPagar');
 const produtosSelecionados = JSON.parse(localStorage.getItem('produtosSelecionados')) || [];
+
+const buttonComprar = document.querySelector(".comprar");
+const checkBox = document.querySelector("#check");
 
 // Fetch
 fetch("https://deisishop.pw.deisi.ulusofona.pt/products")
@@ -51,16 +55,37 @@ function criarProduto(produto) {
     return article;
 }
 
+function criarDesconto(precoAPagar) {
+    const infoJunta = document.createElement('div');
+
+    const textoCompleto = document.createElement('p');
+    textoCompleto.textContent = "Valor final a pagar (com eventuais descontos):";
+
+    const textoReferencia = document.createElement('p');
+    textoReferencia.textContent = "Referencia de pagamento:"
+
+    const totalCost = document.createElement('span');
+    totalCost.textContent = precoAPagar.totalCost;
+
+    const reference = document.createElement('span');
+    reference.textContent = precoAPagar.reference;
+
+    textoCompleto.append(totalCost);
+    textoReferencia.append(reference);
+
+    infoJunta.append(textoCompleto);
+    infoJunta.append(textoReferencia);
+
+    return infoJunta;
+}
+
 function atualizaCesto() {
     nodeSectionCesto.textContent = '';
     produtosSelecionados.forEach((produto) => {
         const artigoCesto = criaProdutoCesto(produto);
         nodeSectionCesto.append(artigoCesto);
     })
-
-    const precoTotal = produtosSelecionados.reduce((soma, produto) => soma + Number(produto.price), 0);
-    nodeContador.textContent = 'Custo Total: ' + precoTotal + '€';
-    nodeSectionCesto.append(nodeContador);
+    atualizacaoPreco();
 }
 
 function criaProdutoCesto(produto) {
@@ -87,6 +112,11 @@ function criaProdutoCesto(produto) {
     return article;
 }
 
+function atualizacaoPreco() {
+    const precoTotal = produtosSelecionados.reduce((soma, produto) => soma + Number(produto.price), 0);
+    nodeContador.textContent = precoTotal + '€';
+}
+
 buttonFiltragem.addEventListener("change", () => {
     const sortType = buttonFiltragem.value;
     if (sortType !== "Todas") {
@@ -111,6 +141,25 @@ pesquisaTexto.addEventListener("input", () => {
     renderizarProdutosTexto(dataStorage, textoEscrito.toLowerCase());
 })
 
+buttonComprar.addEventListener("click", () => {
+    nodeSectionInfo.textContent = "";
+    const produtosID = produtosSelecionados.map(produtos => produtos.id);
+    fetch("https://deisishop.pw.deisi.ulusofona.pt/buy", {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            products: produtosID,
+            student: checkBox.checked,
+            coupon: "",
+            name: ""
+        })
+    })
+    .then(responde => responde.json())
+    .then(data => {
+        renderizarPreco(data);
+    })
+})
+
 // C. Event handlers
 function renderizarProdutos(produtos) {
     nodeSectionProdutos.innerHTML = "";
@@ -118,6 +167,11 @@ function renderizarProdutos(produtos) {
         const novoProduto = criarProduto(produto);
         nodeSectionProdutos.append(novoProduto);
     });
+}
+
+function renderizarPreco(precoAPagar) {
+    const infoAtualizada = criarDesconto(precoAPagar);
+    nodeSectionInfo.append(infoAtualizada);
 }
 
 function renderizarProdutosSorted(produtos, filtro) {
