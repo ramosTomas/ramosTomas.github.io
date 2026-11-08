@@ -65,7 +65,7 @@ function criarDesconto(precoAPagar) {
     textoReferencia.textContent = "Referencia de pagamento:"
 
     const totalCost = document.createElement('span');
-    totalCost.textContent = precoAPagar.totalCost;
+    totalCost.textContent = precoAPagar.totalCost + "€";
 
     const reference = document.createElement('span');
     reference.textContent = precoAPagar.reference;

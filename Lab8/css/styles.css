@@ -20,11 +20,6 @@ body {
             "footer-area";
 }
 
-body > * {
-    border: 2px solid darkgray;
-    color: white;
-}
-
 .escolhaProdutos { grid-area: a1 }
 .produtosSelecionados { grid-area: a2 }
 .pagamento { grid-area: a3 }
@@ -33,16 +28,24 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #1e2433;
-    border: 5px solid darkgray;
+    background-color: #123B4A;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
+header img {
+    max-width: 50px;
+    background-color: white;
+    border-radius: 50px;
     margin-left: 10px;
 }
+
+header h1{
+    color: white;
+    margin-left:125px;
+}
+
 
 header ul {
     display: flex;
@@ -54,7 +57,7 @@ header ul {
 
 header li {
     list-style: none;
-    background-color: beige;
+    background-color: white;
     padding:15px;
     border-radius: 13px;
 }
@@ -65,6 +68,7 @@ header a {
 }
 
 main {
+    background-color: #2A4850;
     height: auto;
     display: grid;
     padding:5px;
@@ -86,11 +90,12 @@ main h2 {
 
 .opcoesBusca {
     background-color: white;
-    border-radius: 13px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items:center;
     height: 85px;
+    margin: 20px;
 }
 
 .opcoesBusca label {
@@ -122,14 +127,18 @@ main h2 {
     gap: 15px;
 }
 
+#produtos {
+    margin-bottom: 50px;
+}
+
 #produtos article {
-    background-color: #1e2433;
-    border: 5px solid gray;
+    background-color: #123B4A;
+    border: 5px solid #56C7B5;
     border-radius: 13px;
     padding: 15px;
-    width: 100%;
-    max-width: 450px;
-    min-height: 650px;
+    width: 45%;
+    max-width: 350px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
@@ -142,54 +151,57 @@ main h2 {
 }
 
 #produtos img, #cesto img {
-    width: 220px;
+    width: 180px;
+    height: 180px;
     align-self: center;
     border-radius: 13px;
 }
 
 #produtos p:first-of-type, #cesto p {
-    color: #e9b44c;
+    color: #E9B44C;
     align-self: center;
     padding: 10px;
     text-align: left;
 }
 
 #produtos p:last-of-type {
-    background-color: #2a3247;
+    background-color: #2A4850;
     color: #cfd4e0;
     font-style: italic;
     border-radius: 13px;
-    width: 400px;
+    width: 100%;
     align-self: center;
     padding: 10px;
     text-align: left;
 }
 
 #produtos button, #cesto button {
+    background-color:#087E83;
+    color:white;
     display: flex;
     justify-content: center;
     align-self: center;
     border: 0;
     border-radius: 5px;
     margin-top:auto;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding:10px;
+    padding-left:10px;
+    padding-right:10px;
 }
 
 .produtosSelecionados {
-    background-color: #1e2433;
-    margin-top:50px;
+    background-color: #E8F5F2;
+    margin-top: 50px;
+    padding: 20px;
 }
 
 .produtosSelecionados h2 {
-    color: white;
+    color: #123B4A;
 }
 
 #cesto article {
-    background-color: beige;
-    border: 5px solid gray;
+    background-color:white;
+    border: 5px solid #56C7B5;
     color:black;
     border-radius: 13px;
     padding: 15px;
@@ -206,7 +218,7 @@ main h2 {
 }
 
 .pagamento {
-    color: black;
+    color: white;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -217,14 +229,29 @@ main h2 {
 
 .pagamento p {
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:10px;
 }
 
 .estudante, .cupao {
     display: flex;
 }
 
+.comprar {
+    background-color:#087E83;
+    padding:5px;
+    padding-left:10px;
+    padding-right:10px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+}
+
 footer {
-    background-color: #1e2433;
+    background-color: #123B4A;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
