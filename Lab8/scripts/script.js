@@ -36,7 +36,7 @@ function criarProduto(produto) {
     titulo.textContent = produto.title;
 
     const imagem = document.createElement('img');
-    imagem.src = produto.image;
+    imagem.src = "https://deisishop.pw.deisi.ulusofona.pt" + produto.image;
 
     const preco = document.createElement('p');
     preco.textContent = 'Custo Total: ' + produto.price + '€';
@@ -95,7 +95,7 @@ function criaProdutoCesto(produto) {
     titulo.textContent = produto.title;
 
     const imagem = document.createElement('img');
-    imagem.src = produto.image;
+    imagem.src = "https://deisishop.pw.deisi.ulusofona.pt" + produto.image;
 
     const preco = document.createElement('p');
     preco.textContent = 'Custo Total: ' + produto.price + '€';
@@ -121,7 +121,7 @@ buttonFiltragem.addEventListener("change", () => {
     const sortType = buttonFiltragem.value;
     if (sortType !== "Todas") {
         renderizarProdutosSorted(dataStorage, sortType);
-    } else {
+    } else {x
         renderizarProdutos(dataStorage);
     }
 })
